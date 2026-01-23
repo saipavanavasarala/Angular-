@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+h1{
+    padding: 0;
+    margin: 0;
+    font-family: play;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    color: red;
+}
+/* Navigation link styles */
+nav a {
+    padding: 15px 20px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #eee;
+    border-radius: 4px;
+    margin-left: 20px;
+  }
+  nav a:visited, a:link {
+    color: #3643b6;
+  }
+  nav a:hover {
+    color: #fff;
+    background-color: #3643b6;
+  }
+  nav a.active {
+    color:  #ce2b2b;
+    background-color: #49ce0c;
+  }
