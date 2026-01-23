@@ -1,0 +1,108 @@
+<!-- <div class="text-center">
+    <h1>Counter app</h1>
+    <div class="mt-3">
+        <h2>{{showname}}</h2>
+        <div class="d-flex align-items-center justify-content-center mt-3" style="gap: 10px;">
+            <button (click) = "handleCounter('minus')" class="btn btn-danger rounded-3">Decrement</button>
+            <button (click) = "handleCounter('reset')" class="btn btn-info rounded-3">Reset</button>
+            <button (click) = "handleCounter('plus')" class="btn btn-primary rounded-3">Increment</button>
+        </div>
+    </div>
+    <input type="text" value="{{name}}" (input) = "getName($event)" class="my-2">
+    <br>
+    <button (click) = "showName()" class="btn btn-primary rounded-3">Getname</button>
+    <button (click) = "setName()" class="btn btn-primary rounded-3">Setname</button>
+    <br>
+    <br>
+    <br>
+    <h4>Email: {{email}}</h4>
+    <input type="text" #emailField value="{{email}}">
+    <button (click) = "getEmail(emailField.value)">Get Email</button>
+    <button (click) = "setEmail()">Get Email</button>
+
+</div> -->
+<!-- <div>
+    <h1 class="title" (click) = "handleEvent($event)">hello</h1>
+    <input type="text" name="username" (focus) = "handleEvent($event)">
+    <br><br>
+    <input type="text"  name="username" (input) = "handleEvent($event)">
+</div> -->
+
+<!-- 
+@if(display) {
+    <div class="bg-primary  w-25 m-auto mt-3" style="height: 100px;"></div>
+}
+@else {
+    <div class="bg-danger  w-25 m-auto mt-3" style="height: 100px;"></div>
+}
+    <button (click) ="toggle()">Toggle</button> -->
+
+
+<!-- <button (click) ="handleColor('red')">Red</button>
+<button (click) ="handleColor('blue')">Blue</button>
+<button (click) ="handleColor('yellow')">Yellow</button>
+<button (click) ="handleColor('default')">Default</button>
+@switch(color) {
+    @case('red') {
+        <h1 style="background-color: red;">Red Color</h1>
+    }
+    @case('blue') {
+        <h1 style="background-color: blue;">Blue Color</h1>
+    }
+    @case('yellow') {
+        <h1 style="background-color: yellow;">Yellow Color</h1>
+    }
+    @default{
+        <h1 style="background-color: black; color: white;">No Color Match</h1>
+    }
+}     -->
+
+
+<!-- @for(student of students; track student.name; let id=$index) {
+    <h4>
+        {{id+1}}
+        {{student.name}}
+        {{student.age}}
+        {{student.email}}
+    </h4>
+
+} -->
+
+<!-- signals -->
+
+<!-- <h1 class="{{classname}}">{{count()}}</h1>
+<h1>{{x}}</h1>
+<button (click) = "increaseSignal()">Increase</button>
+<button (click) = "increaseX()">IncreaseX</button> -->
+
+
+<!-- <h1 [class.textsize]="required">anil</h1>
+<h1 [ngStyle]="myStyles">anil</h1> -->
+
+<!-- <input type="text" [(ngModel)] = data>
+<button>click me</button>
+<br>
+{{data}} -->
+
+<!-- <h1 *ngIf = "status; else elseBlock">Welcome {{name}}!</h1>
+<ng-template #elseBlock>
+    <h1>Welcome User!</h1>
+</ng-template> -->
+<div [ngSwitch] ="myChoice">
+    <div class="switchCase">
+        <div *ngSwitchCase = "'one'">First Case</div>
+        <div *ngSwitchCase = "'two'">Second Case</div>
+        <div *ngSwitchCase = "'three'">Third Case</div>
+        <div *ngSwitchDefault>Invalid Case</div>
+    </div>
+</div>
+<div *ngFor= "let person of persons; index as i" >
+    <h2>{{i+1}} - {{person}}</h2>
+</div>
+<h1>{{fromParent}}</h1>
+<h2>{{str | lowercase}}</h2>
+<h2>{{str | uppercase}}</h2>
+<h2>{{str | titlecase}}</h2>
+<h2>{{5.789 | number: '3.4-5'}}</h2>
+
+<!-- <button (click) = "childMsg()">Clickme</button> -->
