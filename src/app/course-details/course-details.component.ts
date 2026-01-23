@@ -35,4 +35,11 @@ export class CourseDetailsComponent implements OnInit {
     this.route.navigate(['../', {id:selectedId}], {relativeTo: this.activatedParam})
   }
 
+  showDuration() {
+    this.route.navigate(['duration'], {relativeTo: this.activatedParam})
+  }
+  showFee() {
+    this.route.navigate(['fee'], {relativeTo: this.activatedParam})
+  }
+
 }
