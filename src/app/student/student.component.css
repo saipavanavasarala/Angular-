@@ -1,0 +1,25 @@
+.names{
+    list-style: none;
+    width: 250px;
+}
+.names-list {
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
+    padding: 10px 0;
+}
+.names-list:hover {
+    box-shadow: -3px 4px 10px #ddd;
+}
+.badge {
+    background-color: blue;
+    color: white;
+    padding: 11px;
+}
+.badge-text {
+    margin-left: 0.5rem;
+}
+.selected {
+    background: #ff0000;
+    color: white;
+    font-weight: bold;
+}
