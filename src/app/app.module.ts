@@ -7,19 +7,26 @@ import { StudentComponent } from './student/student.component';
 import { AppRoutingModule } from './app-routing.modules';
 import { ErrorComponent } from './error/error.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
+import { CourseDurationComponent } from './course-duration/course-duration.component';
+import { CourseFeeComponent } from './course-fee/course-fee.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { AdminAccessGuard } from './admin-access.guard';
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
     StudentComponent,
     ErrorComponent,
-    CourseDetailsComponent
+    CourseDetailsComponent,
+    CourseDurationComponent,
+    CourseFeeComponent,
+    AdminHomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AdminAccessGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
