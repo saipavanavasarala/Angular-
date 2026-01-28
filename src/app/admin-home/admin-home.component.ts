@@ -3,9 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-admin-home',
   template: `
-    <p>
-      admin-home works!
-    </p>
+    <h2>Admin-home Component Gaurd</h2>
   `,
   styles: [
   ]

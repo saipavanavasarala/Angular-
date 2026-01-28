@@ -23,11 +23,11 @@ export class CourseDetailsComponent implements OnInit {
     if(this.courseId >= 1) {
        previousId = this.courseId - 1;
     }
-    this.route.navigate(['/course', previousId])
+    this.route.navigate(['/course-list', previousId])
   }
   toNext() {
     let nextId = this.courseId + 1;
-    this.route.navigate(['/course', nextId])
+    this.route.navigate(['/course-list', nextId])
   }
   back() {
     let selectedId = this.courseId ? this.courseId : null;
