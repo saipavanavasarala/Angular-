@@ -11,6 +11,9 @@ import { CourseDurationComponent } from './course-duration/course-duration.compo
 import { CourseFeeComponent } from './course-fee/course-fee.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminAccessGuard } from './admin-access.guard';
+import { TdfComponent } from './tdf/tdf.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,11 +23,13 @@ import { AdminAccessGuard } from './admin-access.guard';
     CourseDetailsComponent,
     CourseDurationComponent,
     CourseFeeComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    TdfComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,FormsModule,
+    HttpClientModule
   ],
   providers: [AdminAccessGuard],
   bootstrap: [AppComponent]
