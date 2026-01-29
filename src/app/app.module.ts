@@ -12,8 +12,10 @@ import { CourseFeeComponent } from './course-fee/course-fee.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminAccessGuard } from './admin-access.guard';
 import { TdfComponent } from './tdf/tdf.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { ChangeColorDirective } from './change-color.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,12 +26,15 @@ import { HttpClientModule } from '@angular/common/http';
     CourseDurationComponent,
     CourseFeeComponent,
     AdminHomeComponent,
-    TdfComponent
+    TdfComponent,
+    ReactiveFormsComponent,
+    ChangeColorDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [AdminAccessGuard],
   bootstrap: [AppComponent]

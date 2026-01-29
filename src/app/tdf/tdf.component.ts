@@ -10,8 +10,10 @@ import { FormRegisterService } from '../form-register.service';
 export class TdfComponent implements OnInit {
   courses = ['Angular', 'React', 'Vue','Bootstrap']
   constructor(private regService : FormRegisterService) { }
-  userModel = new User('','', 'Developer','male','default', true);
+  userModel = new User('Abhi','abhi@test.com', 'Developer','male','default', true);
   courseHasError = true;
+  errorMsg:string ="";
+  public submitted = false;
   ngOnInit(): void {
   }
   validateCourse(value) {
@@ -22,9 +24,10 @@ export class TdfComponent implements OnInit {
     }
   }
   onSubmit() {
+    this.submitted = true;
     this.regService.enrol(this.userModel).subscribe(
-      data => console.log("success", data),
-      error => console.log("error",error)
+      data => console.log("success!", data),
+      error => this.errorMsg = error.statusText
     )
   }
 }
