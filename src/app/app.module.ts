@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { ChangeColorDirective } from './change-color.directive';
 import { ChildComponent } from './lifeCycleHooks/child/child.component';
+import { TestComponent } from './test/test.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { ChildComponent } from './lifeCycleHooks/child/child.component';
     TdfComponent,
     ReactiveFormsComponent,
     ChangeColorDirective,
-    ChildComponent
+    ChildComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
