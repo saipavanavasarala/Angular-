@@ -9,6 +9,7 @@ import { debounceTime } from 'rxjs/operators';
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
+  //public users: any = ['Abhi', 'Phani', 'Pavan', 'Rahul'];
   public results: any = [];
   public products: any = [];
   public product = new FormControl();

@@ -1,0 +1,49 @@
+<div *ngIf="mobiles" class="container mob-container">
+  <div class="headers">
+      <h2>Manage Mobiles</h2>
+    <button (click)="addMobile()" class="btn btn-primary">Add Mobile</button>
+  </div>
+  <table class="table table-bordered text-center">
+    <thead>
+      <tr >
+        <th *ngFor="let head of headers">{{head}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mobile of mobiles">
+        <td>{{mobile.name}}</td>
+        <td>{{mobile.price}}</td>
+        <td>{{mobile.RAM}}GB</td>
+        <td>{{mobile.storage}}GB</td>
+        <td><button (click)="editMobile(mobile)" class="btn btn-small btn-success">Edit</button></td>
+        <td><button (click)="deleteMobile(mobile)" class="btn btn-small btn-danger">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- Modal for editing mobile -->
+<div class="modal" *ngIf="showModal" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;">
+  <div style="background:#fff;padding:20px;border-radius:8px;min-width:550px;">
+    <h3>Edit Mobile</h3>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input [(ngModel)]="editMobileData.name"  name="name"  class="form-control"/>
+    </div>
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input type="number" [(ngModel)]="editMobileData.price" name="price" class="form-control"/>
+    </div>
+    <div class="form-group">
+      <label for="RAM">RAM:</label>
+      <input type="number" [(ngModel)]="editMobileData.RAM" name="RAM" class="form-control"/>
+    </div>
+    <div class="form-group">
+      <label for="storage">Storage:</label>
+      <input type="number" [(ngModel)]="editMobileData.storage" name="storage" class="form-control"/>
+    </div>
+    <div class="mt-3 d-flex justify-content-end">
+      <button class="btn btn-primary me-2" (click)="saveMobile()">Save</button>
+      <button class="btn btn-secondary" (click)="closeModal()">Cancel</button>
+    </div>
+  </div>
+</div>

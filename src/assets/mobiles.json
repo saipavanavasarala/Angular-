@@ -1,0 +1,26 @@
+[
+    {
+        "name": "RemiY2",
+        "price": 10000,
+        "RAM": 6,
+        "storage": 64
+    },
+    {
+        "name": "IQOO Z7 Pro 5G",
+        "price": 21000,
+        "RAM": 8,
+        "storage": 128
+    },
+    {
+        "name": "Samsung Galaxy M32",
+        "price": 18000,
+        "RAM": 6,
+        "storage": 64
+    },
+    {
+        "name": "Realme Narzo 50A",
+        "price": 12000,
+        "RAM": 4,
+        "storage": 128
+    }
+]
