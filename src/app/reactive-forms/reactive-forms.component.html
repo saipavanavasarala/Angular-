@@ -1,12 +1,31 @@
 <div class="box-container">
     <div class="box">
         <h2 class="text-center">Login Page</h2>
-        <form [formGroup] = "registerForm">
-            <div class="row">
+        <form [formGroup] = "registerForm" (ngSubmit)="onSubmit(registerForm)" novalidate>
+            <div class="row">   
                 <div class="col-6">
                     <div class="form-group inputbox mt-3">
                         <label for="username">Username :</label>
-                        <input type="text" formControlName="userName" class="form-control" name="username" required="">
+                        <input type="text" [class.is-invalid]="userName.invalid && userName.touched" formControlName="userName" class="form-control" name="username" required="">
+                        <div *ngIf="userName.invalid && userName.touched">
+                            <small class="text-danger" *ngIf="userName.errors?.required">Username is required</small>
+                            <small class="text-danger" *ngIf="userName.errors?.minlength">Username must be atleast 3 characters</small>
+                            <small class="text-danger" *ngIf="userName.errors?.forbiddenName">{{userName.errors?.forbiddenName.value}} - Username is NOT ALLOWED</small>
+                            <!-- <small class="text-danger" *ngIf="userName.errors?.noMatch"> Username is Admin </small> -->
+                        </div>
+                    </div>
+                    <div class="form-group inputbox mt-3">
+                        <label for="email">Email :</label>
+                        <input type="email" [class.is-invalid] = "email.invalid && email.touched" formControlName="email" class="form-control" required="" name="email" id="email">
+                        <button (click)="addAlternateEmail()" class="btn btn-primary btn-sm m-2">Add Email</button>
+                        <small class="text-danger" [class.d-none]="email.valid || email.untouched"> Email is required </small>
+                        <div formArrayName="alternateEmails" *ngFor="let email of alternateEmails.controls; let i = index">
+                            <input type="email" name="email" id="email" class="form-control my-1" [formControlName]="i">
+                        </div>
+                    </div>
+                    <div class="form-check mt-3">
+                        <label for="subscribe">Subscribe </label>
+                        <input type="checkbox" formControlName="subscribe" class="form-check-input" required="" name="subscribe" id="subscribe">
                     </div>
                     <div class="form-group inputbox mt-3">
                         <label for="password">Password :</label>
@@ -14,7 +33,8 @@
                     </div>
                     <div class="form-group inputbox mt-3">
                         <label for="confirmpassword">Confirm Password :</label>
-                        <input type="password" formControlName="confirmPassword" class="form-control" name="confirmpassword" required="">
+                        <input type="password" [class.is-invalid] ="registerForm.errors?.misMatch" formControlName="confirmPassword" class="form-control" name="confirmpassword" required="">
+                        <small class="text-danger" *ngIf="registerForm.errors?.misMatch">Password Mismatch</small>
                     </div>
                 </div>
                 <div class="col-6">
@@ -34,9 +54,7 @@
                     </div>
                 </div>
                 <input appChangeColor class="my-3 btn" type="submit" value="Register">
-                <input appChangeColor 
-                (click) = "displayValues()" 
-                class="my-3 btn" type="button" value="Display">
+                <input appChangeColor class="my-3 btn" type="button" value="Display">
             </div>
         </form>
         <div>{{registerForm.value | json}}</div>

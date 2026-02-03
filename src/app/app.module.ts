@@ -16,6 +16,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { ChangeColorDirective } from './change-color.directive';
+import { ChildComponent } from './lifeCycleHooks/child/child.component';
+import { TestComponent } from './test/test.component';
+import { CrudComponent } from './crud/crud.component';
+import { MobileService } from './mobile.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +32,10 @@ import { ChangeColorDirective } from './change-color.directive';
     AdminHomeComponent,
     TdfComponent,
     ReactiveFormsComponent,
-    ChangeColorDirective
+    ChangeColorDirective,
+    ChildComponent,
+    TestComponent,
+    CrudComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,7 @@ import { ChangeColorDirective } from './change-color.directive';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [AdminAccessGuard],
+  providers: [AdminAccessGuard, MobileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

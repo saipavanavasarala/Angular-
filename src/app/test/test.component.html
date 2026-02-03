@@ -1,0 +1,17 @@
+<div>
+    <h2>Search for product name:</h2>
+    <!-- <input type="text" name="product" id="product" #product (keyup)="search(product.value)">  for Promise--> 
+     <input type="text" [formControl]="product">
+</div>
+
+<div *ngIf="results.length > 0">
+    <ul>
+        <li *ngFor="let x of results">{{x.title}}</li>
+    </ul>
+</div>
+<!--<ng-template #names >
+  <div *ngFor="let u of users">
+    {{u}}
+  </div>
+</ng-template>
+<ng-container *ngTemplateOutlet="names"></ng-container>-->
